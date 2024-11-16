@@ -75,18 +75,12 @@
                     <h3 class="text-xl font-bold text-brand">
                         <?php echo $villa['nama_villa']; ?>
                     </h3>
-                    <p class="text-gray-600">
-                        Kapasitas: <?php echo $villa['kapasitas_maksimal']; ?> Orang
-                    </p>
-                    <p class="text-gray-600">
-                        Rp <?php echo number_format($villa['harga_permalam'], 0, ',', '.'); ?>/malam
-                    </p>
                 </div>
                 <?php
                 }
                 ?>
             </div>
-            <a href="villakami.php" class="brand-color-nav py-2 px-6 rounded-full hover:bg-gray-700 text-brand inline-block">
+            <a href="villakami.php" class="brand-color-nav py-2 px-6 rounded-full hover:bg-stone-500 text-brand inline-block">
                 Lihat Selengkapnya
             </a>
         </div>

@@ -128,11 +128,7 @@
     </div>
 </section>
 
-  </main><div>
-<?php
-    include 'footer.php';
-   ?> 
-</div>
+  </main>
 
 <!-- Modal -->
 <div id="villaModal" class="fixed inset-0 z-50 hidden overflow-auto bg-black bg-opacity-50">
@@ -230,6 +226,26 @@ function closeModal() {
 }
 </script>
 
-
+<section class="relative text-center">
+        <img  class="mx-auto" height="300" src="assets/gambar/info.jpeg" width="1600"/>
+        <div class="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-50 text-white p-8">
+            <h1 class="text-5xl font-bold">INFORMASI</h1>
+            <p class="text-left mt-8">
+                Harap menyesuaikan kapasitas dengan kapasitas maksimal masing-masing villa. Apabila lebih dari kapasitas maksimal villa yang sedang di sewa, maka penyewa akan dikenakan biaya tambahan 50.000/orang (termasuk extra bed).
+                <br/>
+                • Anak di atas 7 tahun, sudah dihitung 1 orang.
+                <br/>
+                • Dilarang menggunakan obat-obatan terlarang dan melakukan tindakan yang tidak sesuai dengan hukum yang berlaku.
+                <br/>
+                • Kerusakan atau kehilangan barang-barang yang di timbulkan oleh tamu, akan dikenakan biaya ganti rugi.
+            </p>
+            <p class="text-left mt-4">Terima kasih.</p>
+        </div>
+    </section>
+    <div>
+    <?php
+        include 'footer.php';
+    ?> 
+</div>
  </body>
 </html>

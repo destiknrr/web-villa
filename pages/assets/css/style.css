@@ -73,3 +73,14 @@
         background-color: #EBE3D5;
         padding: 20px;
     }
+    .mobile-menu {
+        position: absolute; /* Pastikan menu berada di atas elemen lain */
+        top: 3rem; /* Jarak dari atas */
+        right: 1rem; /* Jarak dari kanan */
+        width: 12rem; /* Sesuaikan lebar menu */
+        background-color: white; /* Background untuk visibilitas */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan */
+        z-index: 50; /* Z-index tinggi agar tidak tertutup */
+        border-radius: 0.5rem; /* Membulatkan sudut */
+    }
+    
