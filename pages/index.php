@@ -9,7 +9,7 @@
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>
-   Villa Panjalu
+   Villa Situ Lengkong
   </title>
   <script src="https://cdn.tailwindcss.com">
   </script>
@@ -24,7 +24,7 @@
     <div class="flex items-center mx-10">
      <img alt="Logo" class="h-12 w-auto" height="48" src="assets/gambar/logo.png"/>
      <!-- <span class="ml-2 text-4xl font-bold">
-      Villa Panjalu
+      Villa Situ Lengkong
      </span> -->
     </div>
     
@@ -45,10 +45,10 @@
       ?>
      </h1>
      <h2 class="text-4xl font-family text-brand mb-4 mx-10">
-      Villa Panjalu
+      Villa Situ Lengkong
      </h2>
      <p class="text-gray-600 mx-10">
-      Menemukan informasi villa di Panjalu untuk staycation lebih mudah dengan website kami.
+      Menemukan informasi villa di Situ Lengkong Panjalu untuk staycation lebih mudah dengan website kami.
      </p>
     </div>
     <div class="md:w-1/2">

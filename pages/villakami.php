@@ -7,9 +7,11 @@
  <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  
   <title>
    Villa Situ Lengkong
   </title>
+
   <script src="https://cdn.tailwindcss.com">
   </script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
@@ -73,10 +75,7 @@
  <header class="py-4 brand-color-nav" >
    <div class="container mx-auto flex justify-between items-center">
     <div class="flex items-center mx-10">
-     <img alt="Logo" class="h-12 w-auto" height="48" src="assets/gambar/logo.png"/>
-     <!-- <span class="ml-2 text-4xl font-bold">
-      Villa Panjalu
-     </span> -->
+    <img alt="Logo" class="h-12 w-auto" height="48" src="assets/gambar/logo.png"/>
     </div>
     
    <?php
@@ -90,8 +89,8 @@
     <img alt="Scenic view of the lake and trees" class="w-full h-96 object-cover" height="400" src="assets/gambar/main-poto.jpeg" width="1200"/>
    </section>
    <section class="text-center py-8 bg-white">
-    <h1 class="text-3xl font-bold">
-     VILLA PANJALU
+    <h1 class="text-3xl font-bold text-brand">
+     VILLA SITU LENGKONG
     </h1>
     <p class="text-gray-600">
      Temukan villa yang cocok untuk kebutuhan staycation Anda!
@@ -121,7 +120,6 @@
                             class="mt-2 px-4 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-800">
                         Lihat Detail
                     </button>
-
                 </div>
             </div>
         <?php } ?>
@@ -143,16 +141,23 @@
                 <!-- Images will be dynamically inserted here -->
             </div>
             <div class="slider-nav-button prev swiper-button-prev">
-                <i class="fas fa-chevron-left"></i>
+                <i class="bi bi-arrow-left-circle"></i>
             </div>
             <div class="slider-nav-button next swiper-button-next">
-                <i class="fas fa-chevron-right"></i>
+                <i class="bi bi-arrow-right-circle"></i>
             </div>
             <div class="swiper-pagination"></div>
         </div>
         
         <div id="modalContent">
             <!-- Villa details will be inserted here -->
+        </div>
+        <!-- Booking Form -->
+        <div class="flex justify-end">
+            <button onclick="window.location.href='contact.php'" 
+                    class="mt-2 px-4 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-800">
+                    Booking Villa
+            </button>
         </div>
     </div>
 </div>
@@ -162,7 +167,6 @@ const swiper = new Swiper(".mySwiper", {
     loop: true,
     navigation: {
         nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
     },
     pagination: {
         el: ".swiper-pagination",
@@ -230,8 +234,6 @@ function closeModal() {
             <h1 class="text-5xl font-bold">INFORMASI</h1>
             <p class="text-left mt-8">
                 Harap menyesuaikan kapasitas dengan kapasitas maksimal masing-masing villa. Apabila lebih dari kapasitas maksimal villa yang sedang di sewa, maka penyewa akan dikenakan biaya tambahan 50.000/orang (termasuk extra bed).
-                <br/>
-                • Anak di atas 7 tahun, sudah dihitung 1 orang.
                 <br/>
                 • Dilarang menggunakan obat-obatan terlarang dan melakukan tindakan yang tidak sesuai dengan hukum yang berlaku.
                 <br/>
