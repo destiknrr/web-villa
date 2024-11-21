@@ -16,9 +16,6 @@
         <a class="hover:text-stone-900 <?php echo (basename($_SERVER['PHP_SELF']) == 'villakami.php') ? 'text-stone-900' : 'text-slate-50'; ?>" href="villakami.php">
             Villa Kami
         </a>
-        <a class="hover:text-stone-900 <?php echo (basename($_SERVER['PHP_SELF']) == 'booking.php.php') ? 'text-stone-900' : 'text-slate-50'; ?>" href="booking.php.php">
-            Booking
-        </a>
         <a class="hover:text-stone-900 <?php echo (basename($_SERVER['PHP_SELF']) == 'about.php') ? 'text-stone-900' : 'text-slate-50'; ?>" href="about.php">
             Tentang Kami  
         </a>
@@ -34,9 +31,6 @@
         </a>
         <a class="block px-4 py-2 hover:bg-gray-100 <?php echo (basename($_SERVER['PHP_SELF']) == 'villakami.php') ? 'text-stone-900' : 'text-gray-800'; ?>" href="villakami.php">
             Villa Kami
-        </a>
-        <a class="block px-4 py-2 hover:bg-gray-100 <?php echo (basename($_SERVER['PHP_SELF']) == 'booking.php.php') ? 'text-stone-900' : 'text-gray-800'; ?>" href="booking.php.php">
-            Cek Tanggal
         </a>
         <a class="block px-4 py-2 hover:bg-gray-100 <?php echo (basename($_SERVER['PHP_SELF']) == 'about.php') ? 'text-stone-900' : 'text-gray-800'; ?>" href="about.php">
             Tentang Kami  

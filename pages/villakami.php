@@ -196,8 +196,6 @@ function openModal(villaId) {
                 <div class="grid grid-cols-2 gap-4 text-gray-600 mb-4">
                     <div>
                         <p><strong>Kapasitas:</strong> ${data.kapasitas_maksimal} Orang</p>
-                        <p><strong>Kamar Tidur:</strong> ${data.jumlah_kamar_tidur}</p>
-                        <p><strong>Kamar Mandi:</strong> ${data.jumlah_kamar_mandi}</p>
                     </div>
                     <div>
                         <p><strong>Harga per Malam:</strong></p>
