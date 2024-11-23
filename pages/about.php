@@ -21,6 +21,9 @@
   <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet"/>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
+  <!-- AOS  -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     </head>
     <body>
         <header class="py-4 brand-color-nav" >
@@ -39,29 +42,35 @@
         <body class="bg-gray-100">
         <div class="flex flex-col items-center justify-center min-h-screen">
         <div class="flex flex-col items-center md:flex-row md:items-start md:justify-between w-full max-w-5xl p-4">
-            <div class="flex flex-col items-center md:items-start md:w-1/2">
+            <div class="flex flex-col items-center md:items-start md:w-1/2" data-aos="fade-up">
             <h1 class="text-4xl font-bold mb-4 my-8 text-brand">
             VILLA SITU LENGKONG
             </h1>
             <h2 class="text-xl mb-4 text-brand">
-            Kami menyediakan beberapa Private Villa yang dapat Anda sewa harian. Lengkap dengan informasi foto, harga, lokasi dan juga fasilitas yang tersedia. Anda juga dapat melakukan reservasi online melalui webaite kami “Villa Situ Lengkong”.             
+            Kami menyediakan beberapa Private Villa yang dapat Anda sewa harian. Lengkap dengan informasi foto, harga, lokasi dan juga fasilitas yang tersedia. Anda juga dapat menghubungi admin untuk reservasi online melalui website kami “Villa Situ Lengkong”.             
             </h2>
             </div>
-            <div class="md:w-1/2 mt-4 md:mt-0">
+            <div class="md:w-1/2 mt-4 md:mt-0" data-aos="zoom-in">
             <img alt="Living room with sofas, a table, and guitars" class="rounded-lg shadow-lg my-8" height="400" src="assets\gambar\villa-bata-2.jpeg" width="700"/>
             </div>
         </div>
-        <div class="text-3xl text-brand font-bold text-center mt-10 mb-4">
+        <div class="text-3xl text-brand font-bold text-center mt-10 mb-4" data-aos="fade-up">
             <h>
                 LOKASI 
             </h>
         </div>       
-        <map>
-            <div class="mapswrapper mb-6"><iframe width="600" height="450" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=Situ%20Lengkong%20Panjalu&zoom=10&maptype=roadmap"></iframe><a href="https://fnfmods.net/fnf-huggy-wuggy-mod/">FNF Huggy Wuggy Mod</a>
-                <style>.mapswrapper{background:#fff;position:relative}.mapswrapper iframe{border:0;position:relative;z-index:2}.mapswrapper a{color:rgba(0,0,0,0);position:absolute;left:0;top:0;z-index:0}
-                </style>
+        <div class="w-full flex justify-center">
+            <div class="w-full max-w-4xl px-4 py-8 bg-white shadow-md rounded-lg mb-10" data-aos="fade-in">
+                <div class="relative w-full h-0 pb-[56.25%]" >
+                    <iframe 
+                        class="absolute top-0 left-0 w-full h-full"
+                        loading="lazy" 
+                        allowfullscreen 
+                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=Situ%20Lengkong%20Panjalu&zoom=10&maptype=roadmap">
+                    </iframe>
+                </div>
             </div>
-        </map>
+        </div>       
         </div>
         </body>
     </main>
@@ -70,6 +79,11 @@
     include 'footer.php';
     ?>
   </div>
-    </body>
 
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+    </body>
 </html>

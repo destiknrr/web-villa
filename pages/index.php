@@ -16,6 +16,10 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
   <link href="assets/css/style.css" rel="stylesheet"/>
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
  </head>
 
  <body class="bg-white text-slate-50">
@@ -36,22 +40,22 @@
   </header>
   <main class="container mx-auto py-12">
    <section class="flex flex-col md:flex-row items-center mb-12">
-    <div class="md:w-1/2 mb-8 md:mb-0">
-     <h1 class="text-6xl font-bold mb-4 mx-10 text-brand">
-      Selamat Datang! 
-      <?php
+    <div class="md:w-1/2 mb-8 md:mb-0" data-aos="fade-right">
+     <h1 class="text-4xl font-bold mb-4 mx-10 text-brand">
+        SELAMAT DATANG!
+    <?php
     //    var_dump($villas); 
         // echo "<br>" . "<image src='{$villas[1]['foto_utama']}'>" . $villas[1]['foto_utama'] ;  
       ?>
      </h1>
-     <h2 class="text-4xl font-family text-brand mb-4 mx-10">
+     <h2 class="text-2xl font-family text-brand mb-4 mx-10">
       Villa Situ Lengkong
      </h2>
      <p class="text-gray-600 mx-10">
       Menemukan informasi villa di Situ Lengkong Panjalu untuk staycation lebih mudah dengan website kami.
      </p>
     </div>
-    <div class="md:w-1/2">
+    <div class="md:w-1/2" data-aos="fade-up">
      <img class="w-full h-auto rounded-lg shadow-lg" height="400" src="assets/gambar/main-poto.jpeg" width="600"/>
     </div>
    </section>
@@ -60,14 +64,14 @@
 
    <section id="detail">
         <div class="bungkus text-center py-10">
-            <h2 class="text-3xl font-bold mb-8 text-brand mt-brand-1">
+            <h2 class="text-3xl font-bold mb-8 text-brand mt-brand-1" data-aos="zoom-in-up">
                 Yuk Lihat Detail Villa!
             </h2>
             <div class="flex flex-col md:flex-row justify-center items-center space-y-8 md:space-y-0 md:space-x-8 mb-8">
                 <?php
                 foreach($villas as $villa) {
                 ?>
-                <div class="w-full md:w-1/3">
+                <div class="w-full md:w-1/3" data-aos="zoom-in-up">
                     <img class="w-full h-auto rounded-lg shadow-lg mb-4" 
                         height="300" 
                         src="<?php echo $villa['foto_utama']; ?>" 
@@ -80,13 +84,13 @@
                 }
                 ?>
             </div>
-            <a href="villakami.php" class="brand-color-nav py-2 px-6 rounded-full hover:bg-stone-500 text-brand inline-block">
+            <a href="villakami.php" class="brand-color-nav py-2 px-6 rounded-full hover:bg-stone-500 text-brand inline-block" data-aos="fade-up">
                 Lihat Selengkapnya
             </a>
         </div>
     </section>
 
-   <section class="py-12">
+   <section class="py-12" data-aos="fade-up">
     <h2 class="text-3xl font-bold text-center mb-8 text-gray">
      Proses Penyewaan Villa
     </h2>
@@ -132,5 +136,9 @@
     include 'footer.php';
     ?>
   </div>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
  </body>
 </html>

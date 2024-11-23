@@ -21,6 +21,9 @@
   <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet"/>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
   <!-- Add in head section -->
     <style>
     .swiper {
@@ -86,13 +89,13 @@
   </header>
   <main>
    <section class="relative">
-    <img alt="Scenic view of the lake and trees" class="w-full h-96 object-cover" height="400" src="assets/gambar/main-poto.jpeg" width="1200"/>
+    <img alt="Scenic view of the lake and trees" data-aos="fade-right" class="w-full h-96 object-cover" height="400" src="assets/gambar/main-poto.jpeg" width="1200"/>
    </section>
    <section class="text-center py-8 bg-white">
-    <h1 class="text-3xl font-bold text-brand">
+    <h1 class="text-3xl font-bold text-brand" data-aos="fade-zoom-up">
      VILLA SITU LENGKONG
     </h1>
-    <p class="text-gray-600">
+    <p class="text-gray-600" data-aos="fade-zoom-up">
      Temukan villa yang cocok untuk kebutuhan staycation Anda!
     </p>
    </section>
@@ -100,7 +103,7 @@
    <section class="bg-gray-100 py-8">
     <div class="max-w-4xl mx-auto grid grid-cols-2 gap-2">
         <?php foreach($villas as $villa) { ?>
-            <div class="bg-white p-4 rounded-lg shadow-md">
+            <div class="bg-white p-4 rounded-lg shadow-md" data-aos="fade-zoom-up">
                 <img alt="<?php echo $villa['nama_villa']; ?>" 
                      class="w-full h-48 rounded-lg object-cover" 
                      src="<?php echo $villa['foto_utama']; ?>" 
@@ -137,14 +140,22 @@
         
         <!-- Update the Swiper container in the modal -->
         <div class="swiper mySwiper mb-4">
-            <div class="swiper-wrapper" id="modalImages">
+                <div class="swiper-wrapper" id="modalImages">
                 <!-- Images will be dynamically inserted here -->
-            </div>
+                <?php foreach ($villa['foto_villa'] as $foto) { ?>
+                    <div class="swiper-slide">
+                        <img src="<?php echo base_url('uploads/villa/' . $foto); ?>" 
+                            alt="<?php echo $villa['nama_villa']; ?>"
+                            class="img-fluid">
+                    </div>
+                <?php } ?>
+                </div>
+
             <div class="slider-nav-button prev swiper-button-prev">
                 <i class="bi bi-arrow-left-circle"></i>
             </div>
             <div class="slider-nav-button next swiper-button-next">
-                <i class="bi bi-arrow-right-circle"></i>
+                <i class="bi bi-arrow-right-circle"></i> 
             </div>
             <div class="swiper-pagination"></div>
         </div>
@@ -152,6 +163,7 @@
         <div id="modalContent">
             <!-- Villa details will be inserted here -->
         </div>
+
         <!-- Booking Form -->
         <div class="flex justify-end">
             <button onclick="window.location.href='contact.php'" 
@@ -228,24 +240,33 @@ function closeModal() {
 }
 </script>
 
-<section class="relative text-center">
+<section class="relative text-center" data-aos="fade-zoom-in">
         <img  class="mx-auto" height="300" src="assets/gambar/info.jpeg" width="1600"/>
-        <div class="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-50 text-white p-8">
-            <h1 class="text-5xl font-bold">INFORMASI</h1>
-            <p class="text-left mt-8">
-                Harap menyesuaikan kapasitas dengan kapasitas maksimal masing-masing villa. Apabila lebih dari kapasitas maksimal villa yang sedang di sewa, maka penyewa akan dikenakan biaya tambahan 50.000/orang (termasuk extra bed).
-                <br/>
-                • Dilarang menggunakan obat-obatan terlarang dan melakukan tindakan yang tidak sesuai dengan hukum yang berlaku.
-                <br/>
-                • Kerusakan atau kehilangan barang-barang yang di timbulkan oleh tamu, akan dikenakan biaya ganti rugi.
-            </p>
-            <p class="text-left mt-4">Terima kasih.</p>
-        </div>
+        <div class="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-50 text-white p-1 md:p-2">
+            <h1 class="text-3xl md:text-5xl font-bold text-center">INFORMASI</h1>
+            
+            <div class="max-w-4xl w-full mt-4 md:mt-8">
+                <p class="text-sm md:text-base text-left">
+                    Harap menyesuaikan kapasitas dengan kapasitas maksimal masing-masing villa. Apabila lebih dari kapasitas maksimal villa yang sedang di sewa, maka penyewa akan dikenakan biaya tambahan 50.000/orang (termasuk extra bed).
+                    <br class="my-2"/>
+                    • Dilarang menggunakan obat-obatan terlarang dan melakukan tindakan yang tidak sesuai dengan hukum yang berlaku.
+                    <br class="my-2"/>
+                    • Kerusakan atau kehilangan barang-barang yang di timbulkan oleh tamu, akan dikenakan biaya ganti rugi.
+                </p>
+                <p class="text-left mt-2 md:mt-4 text-sm md:text-base">Terima kasih.</p>
+            </div>
+</div>
     </section>
     <div>
     <?php
         include 'footer.php';
     ?> 
 </div>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
  </body>
 </html>
