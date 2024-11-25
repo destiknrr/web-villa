@@ -119,10 +119,98 @@
                     <p class="text-gray-600 mt-2">
                         Rp <?php echo number_format($villa['harga_permalam'], 0, ',', '.'); ?>/malam
                     </p>
-                    <button onclick="openModal(<?php echo $villa['id']; ?>)" 
-                            class="mt-2 px-4 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-800">
+
+                    <!-- Modal toggle -->
+                    <button data-modal-target="crud-modal-<?php echo $villa['id']; ?>" data-modal-toggle="crud-modal-<?php echo $villa['id']; ?>" class="mt-2 px-4 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-800" type="button">
                         Lihat Detail
                     </button>
+
+                    <?php
+                    $foto = ambilFotoBanyak($villa['id']);
+                    ?>
+
+                    <!-- Main modal -->
+                    <div id="crud-modal-<?php echo $villa['id']; ?>" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                        <div class="relative p-4 w-full max-w-md max-h-full">
+                            <!-- Modal content -->
+                            <div class="relative rounded-lg shadow dark:bg-gray-700">
+                                <!-- Modal header -->
+                                <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                                    <h3 class="text-lg font-medium text-white mb-1">
+                                        <?php echo $villa['nama_villa']; ?>
+                                    </h3>
+                                    <button type="button" class="text-white bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="crud-modal-<?php echo $villa['id']; ?>">
+                                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                                        </svg>
+                                        <span class="sr-only">Close modal</span>
+                                    </button>
+                                </div>
+                                <!-- Modal body -->
+                                <div class="p-4 md:p-5">
+
+                                <!-- carousel -->
+                                <div id="default-carousel" class="relative w-full" data-carousel="slide">
+                                    <!-- Carousel wrapper -->
+                                    <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+
+                                        <?php 
+                                            $nomor = 0;
+                                            foreach ($foto as $f) { 
+                                        ?>
+                                        <!-- Item 1 -->
+                                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                            <img src= "<?= $f['path_foto'];?>" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="foto villa">
+                                        </div>
+                                        <?php } ?>
+                                    </div>
+
+                                    <!-- Slider indicators -->
+                                    <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+                                        <?php
+                                        for($i = 0; $i < count($foto); $i++) {
+                                            $active = $i === 0 ? 'true' : 'false';
+                                            echo '<button type="button" class="w-3 h-3 rounded-full bg-white/30 dark:bg-gray-800/30" aria-current="'.$active.'" aria-label="Slide '.($i+1).'" data-carousel-slide-to="'.$i.'"></button>';
+                                        }
+                                        ?>
+                                    </div>
+                                    
+                                    <!-- Slider controls -->
+                                    <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                                        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                                            <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                                            </svg>
+                                            <span class="sr-only">Previous</span>
+                                        </span>
+                                    </button>
+                                    <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                                        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                                            <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                                            </svg>
+                                            <span class="sr-only">Next</span>
+                                        </span>
+                                    </button>
+                                </div>
+                                <!-- end carousel -->
+
+                                    <p class="text-slate-50 mt-4 mb-2 font-extralight	">Kapasitas Maksimal: <?php echo $villa['kapasitas_maksimal']; ?> Orang</p>
+                                    <p class="text-slate-50 mt-2 text-left font-extralight"><?php echo $villa['deskripsi']; ?></p>
+                                    <p class="text-slate-50 mt-2 text-left font-extralight">Harga: Rp <?php echo number_format($villa['harga_permalam'], 0, ',', '.'); ?>/malam</p>
+                                    <p class="text-slate-50 mt-2 text-left font-extralight"> Fasilitas: <?php echo $villa['fasilitas']; ?></p>
+                                </div>
+                                <button class="mt-2 mb-2 px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-500" type="button">
+                                    <a href="contact.php"> Booking </a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end modals -->
+
+                    <!-- Include Flowbite JS -->
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
+
                 </div>
             </div>
         <?php } ?>
@@ -130,115 +218,6 @@
 </section>
 
   </main>
-
-<!-- Modal -->
-<div id="villaModal" class="fixed inset-0 z-50 hidden overflow-auto bg-black bg-opacity-50">
-    <div class="relative p-8 bg-white max-w-4xl mx-auto my-10 rounded-lg">
-        <button onclick="closeModal()" class="absolute right-4 top-4 text-gray-600 hover:text-gray-800">
-            <i class="fas fa-times text-2xl"></i>
-        </button>
-        
-        <!-- Update the Swiper container in the modal -->
-        <div class="swiper mySwiper mb-4">
-                <div class="swiper-wrapper" id="modalImages">
-                <!-- Images will be dynamically inserted here -->
-                <?php foreach ($villa['foto_villa'] as $foto) { ?>
-                    <div class="swiper-slide">
-                        <img src="<?php echo base_url('uploads/villa/' . $foto); ?>" 
-                            alt="<?php echo $villa['nama_villa']; ?>"
-                            class="img-fluid">
-                    </div>
-                <?php } ?>
-                </div>
-
-            <div class="slider-nav-button prev swiper-button-prev">
-                <i class="bi bi-arrow-left-circle"></i>
-            </div>
-            <div class="slider-nav-button next swiper-button-next">
-                <i class="bi bi-arrow-right-circle"></i> 
-            </div>
-            <div class="swiper-pagination"></div>
-        </div>
-        
-        <div id="modalContent">
-            <!-- Villa details will be inserted here -->
-        </div>
-
-        <!-- Booking Form -->
-        <div class="flex justify-end">
-            <button onclick="window.location.href='contact.php'" 
-                    class="mt-2 px-4 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-800">
-                    Booking Villa
-            </button>
-        </div>
-    </div>
-</div>
-
-<script>
-const swiper = new Swiper(".mySwiper", {
-    loop: true,
-    navigation: {
-        nextEl: ".swiper-button-next",
-    },
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
-    keyboard: {
-        enabled: true,
-    },
-    effect: "fade",
-    fadeEffect: {
-        crossFade: true
-    },
-    autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-    }
-});
-
-function openModal(villaId) {
-    fetch(`get_villa_detail.php?id=${villaId}`)
-        .then(response => response.json())
-        .then(data => {
-            document.getElementById('modalImages').innerHTML = `
-                <div class="swiper-slide">
-                    <img src="${data.foto_utama}" class="w-full h-64 object-cover">
-                </div>
-            `;
-            
-            document.getElementById('modalContent').innerHTML = `
-                <h2 class="text-2xl font-bold text-gray-800 mb-4">${data.nama_villa}</h2>
-                <div class="grid grid-cols-2 gap-4 text-gray-600 mb-4">
-                    <div>
-                        <p><strong>Kapasitas:</strong> ${data.kapasitas_maksimal} Orang</p>
-                    </div>
-                    <div>
-                        <p><strong>Harga per Malam:</strong></p>
-                        <p class="text-xl font-bold text-gray-800">
-                            Rp ${new Intl.NumberFormat('id-ID').format(data.harga_permalam)}
-                        </p>
-                    </div>
-                </div>
-                <div class="text-gray-600">
-                    <h3 class="font-bold mb-2">Deskripsi:</h3>
-                    <p>${data.deskripsi}</p>
-                </div>
-                <div class="mt-4">
-                    <h3 class="font-bold mb-2 text-gray-600">Fasilitas:</h3>
-                    <p class="text-gray-600">${data.fasilitas || 'Tidak ada fasilitas tercatat'}</p>
-                </div>
-            `;
-            
-            swiper.update();
-            document.getElementById('villaModal').classList.remove('hidden');
-        });
-}
-
-function closeModal() {
-    document.getElementById('villaModal').classList.add('hidden');
-}
-</script>
 
 <section class="relative text-center" data-aos="fade-zoom-in">
         <img  class="mx-auto" height="300" src="assets/gambar/info.jpeg" width="1600"/>

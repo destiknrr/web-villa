@@ -59,15 +59,15 @@
             </div>
         </div>
         <div class="flex justify-center space-x-6 mt-6" data-aos="fade-in">
-            <a class="text-3xl text-gray-600" href="#">
+            <a class="text-3xl text-gray-600" href="https://www.instagram.com/">
             <i class="fab fa-instagram">
             </i>
             </a>
-            <a class="text-3xl text-gray-600" href="#">
+            <a class="text-3xl text-gray-600" href="https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2F%3Flocale%3Did_ID">
             <i class="fab fa-facebook">
             </i>
             </a>
-            <a class="text-3xl text-gray-600" href="#">
+            <a class="text-3xl text-gray-600" href="https://g.co/kgs/Nc4SkEE">
             <i class="fas fa-link">
             </i>
             </a>

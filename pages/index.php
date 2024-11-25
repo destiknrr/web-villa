@@ -44,8 +44,6 @@
      <h1 class="text-4xl font-bold mb-4 mx-10 text-brand">
         SELAMAT DATANG!
     <?php
-    //    var_dump($villas); 
-        // echo "<br>" . "<image src='{$villas[1]['foto_utama']}'>" . $villas[1]['foto_utama'] ;  
       ?>
      </h1>
      <h2 class="text-2xl font-family text-brand mb-4 mx-10">
