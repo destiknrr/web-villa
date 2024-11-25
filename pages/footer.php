@@ -8,18 +8,17 @@
            Hubungi Kami
           </p>
           <p class="text-gray-600 mb-2">
-           0895-0689-2000 / 0821-30133-0892
-          </p>
+          0813-1259-9216          </p>
           <p class="text-gray-600 mb-5">
            villasitulengkong@gmail.com
           </p>
         </div>
         <div class="flex space-x-4 mb-6 md:mb-0 md:mr-14">
-         <a class="text-gray-600 hover:text-slate-50" href="#">
+         <a class="text-gray-600 hover:text-slate-50" href="https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2F%3Flocale%3Did_ID">
           <i class="fab fa-facebook-f">
           </i>
          </a>
-         <a class="text-gray-600 hover:text-slate-50" href="#">
+         <a class="text-gray-600 hover:text-slate-50" href="https://www.instagram.com/">
           <i class="fab fa-instagram">
           </i>
          </a>
@@ -27,7 +26,7 @@
           <i class="fab fa-tiktok">
           </i>
          </a>
-         <a class="text-gray-600 hover:text-slate-50" href="#">
+         <a class="text-gray-600 hover:text-slate-50" href="https://wa.me/+6281312599216">
           <i class="fab fa-whatsapp">
           </i>
          </a>

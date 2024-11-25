@@ -216,36 +216,47 @@
         <?php } ?>
     </div>
 </section>
+</main>
 
-  </main>
 
 <section class="relative text-center" data-aos="fade-zoom-in">
-        <img  class="mx-auto" height="300" src="assets/gambar/info.jpeg" width="1600"/>
-        <div class="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-50 text-white p-1 md:p-2">
-            <h1 class="text-3xl md:text-5xl font-bold text-center">INFORMASI</h1>
-            
-            <div class="max-w-4xl w-full mt-4 md:mt-8">
-                <p class="text-sm md:text-base text-left">
-                    Harap menyesuaikan kapasitas dengan kapasitas maksimal masing-masing villa. Apabila lebih dari kapasitas maksimal villa yang sedang di sewa, maka penyewa akan dikenakan biaya tambahan 50.000/orang (termasuk extra bed).
-                    <br class="my-2"/>
-                    • Dilarang menggunakan obat-obatan terlarang dan melakukan tindakan yang tidak sesuai dengan hukum yang berlaku.
-                    <br class="my-2"/>
-                    • Kerusakan atau kehilangan barang-barang yang di timbulkan oleh tamu, akan dikenakan biaya ganti rugi.
-                </p>
-                <p class="text-left mt-2 md:mt-4 text-sm md:text-base">Terima kasih.</p>
-            </div>
-</div>
-    </section>
+    <!-- Image -->
+    <img 
+        class="mx-auto w-full max-h-[300px] object-cover sm:max-h-[400px] md:max-h-[500px]" 
+        src="assets/gambar/info.jpeg" 
+        alt="Informasi"
+    />
+
+    <!-- Overlay -->
+    <div class="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-50 text-white p-4 md:p-8">
+        <!-- Title -->
+        <h1 class="text-2xl md:text-4xl lg:text-5xl font-bold">INFORMASI</h1>
+
+        <!-- Content -->
+        <div class="max-w-3xl w-full ">
+            <p class="text-sm md:text-base lg:text-lg text-left leading-relaxed">
+                Harap menyesuaikan kapasitas dengan kapasitas maksimal masing-masing villa. Apabila lebih dari kapasitas maksimal villa yang sedang disewa, maka penyewa akan dikenakan biaya tambahan 50.000/orang (termasuk extra bed).
+                <br class="my-2"/>
+                • Dilarang menggunakan obat-obatan terlarang dan melakukan tindakan yang tidak sesuai dengan hukum yang berlaku.
+                <br class="my-2"/>
+                • Kerusakan atau kehilangan barang-barang yang ditimbulkan oleh tamu, akan dikenakan biaya ganti rugi.
+            </p>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Footer -->
     <div>
     <?php
         include 'footer.php';
     ?> 
-</div>
+    </div>
 
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
 
  </body>
 </html>
