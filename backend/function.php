@@ -71,6 +71,19 @@ function ambilSemuaVilla() {
     return $villas;
 }
 
+function ambilSemuaVillaById($id) {
+    $conn = connectDB();
+    $query = "SELECT * FROM villa WHERE id = '$id'";
+    $result = $conn->query($query);
+    
+    // Return single row directly
+    $villa = $result->fetch_assoc();
+    
+    $conn->close();
+    return $villa;
+}
+
+
 function ambilFotoBanyak($villa_id) {
     $conn = connectDB();
     $query = "SELECT path_foto FROM foto_villa WHERE villa_id ='$villa_id'";

@@ -201,7 +201,7 @@
                                     <p class="text-slate-50 mt-2 text-left font-extralight"> Fasilitas: <?php echo $villa['fasilitas']; ?></p>
                                 </div>
                                 <button class="mt-2 mb-2 px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-500" type="button">
-                                    <a href="contact.php"> Booking </a>
+                                    <a href="contact.php?id=<?= $villa['id']; ?>"> Booking </a>
                                 </button>
                             </div>
                         </div>
@@ -235,7 +235,7 @@
         <!-- Content -->
         <div class="max-w-3xl w-full ">
             <p class="text-sm md:text-base lg:text-lg text-left leading-relaxed">
-                Harap menyesuaikan kapasitas dengan kapasitas maksimal masing-masing villa. Apabila lebih dari kapasitas maksimal villa yang sedang disewa, maka penyewa akan dikenakan biaya tambahan 50.000/orang (termasuk extra bed).
+                Harap menyesuaikan kapasitas dengan kapasitas maksimal masing-masing villa. 
                 <br class="my-2"/>
                 • Dilarang menggunakan obat-obatan terlarang dan melakukan tindakan yang tidak sesuai dengan hukum yang berlaku.
                 <br class="my-2"/>
