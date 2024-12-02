@@ -235,7 +235,7 @@
         <!-- Content -->
         <div class="max-w-3xl w-full ">
             <p class="text-sm md:text-base lg:text-lg text-left leading-relaxed">
-                Harap menyesuaikan kapasitas dengan kapasitas maksimal masing-masing villa. 
+                • Harap menyesuaikan kapasitas dengan kapasitas maksimal masing-masing villa. 
                 <br class="my-2"/>
                 • Dilarang menggunakan obat-obatan terlarang dan melakukan tindakan yang tidak sesuai dengan hukum yang berlaku.
                 <br class="my-2"/>
